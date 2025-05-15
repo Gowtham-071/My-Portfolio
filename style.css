@@ -237,3 +237,40 @@ footer {
   text-decoration: underline;
   outline: 3px solid #1e90ff;
 }
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 10px rgba(0, 255, 224, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-table thead {
+  background-color: #00ffe0;
+  color: #000;
+}
+
+.project-table th,
+.project-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.project-table tr:hover {
+  background-color: #222;
+}
+
+.project-table a {
+  color: #00ffe0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project-table a:hover {
+  text-decoration: underline;
+  outline: 3px solid #00ffe0;
+}
