@@ -22,17 +22,17 @@ This portfolio is actively maintained and evolves with my career growth.
 
 ## 🖼️ Portfolio Preview
 
-### Hero Section
-![Hero Section](assets/screenshots/hero.png)
+## Hero Section
+![Hero Section](assets/Hero%20Section.png)
 
-### Technical Arsenal
-![Technical Arsenal](assets/screenshots/technical.png)
+## Technical Arsenal
+![Technical Arsenal](assets/Technical%20Section.png)
 
-### Featured Projects
-![Projects Section](assets/screenshots/projects.png)
+## Featured Projects
+![Projects Section](assets/Projects%20Section.png)
 
-### Beyond Code & Moments
-![Beyond Code](assets/screenshots/beyond-code.png)
+## Beyond Code & Moments
+![Beyond Code](assets/Beyond%20Code%20Section.png)
 
 ---
 
