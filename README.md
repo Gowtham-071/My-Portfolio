@@ -46,7 +46,7 @@ This portfolio is actively maintained and evolves with my career growth.
 ---
 
 ## 📄 Resume
-👉 [Download Resume](assets/resume/Chanchala_Sai_Gowtham.pdf)
+👉 [Download Resume](assets/Chanchala_Sai_Gowtham.pdf)
 
 ---
 
