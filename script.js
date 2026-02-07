@@ -260,7 +260,6 @@ const carouselState = {
   'sit-event': { current: 0, total: 2, interval: null, duration: 3000 },        // 2 images: 3s per image = 6s total
   'cause-2025': { current: 0, total: 2, interval: null, duration: 3000 },       // 2 images: 3s per image = 6s total
   'social-service': { current: 0, total: 4, interval: null, duration: 3000 }    // 4 images: 3s per image = 12s total
-  // SIT & CAUSE: 6s each, Social Service: 12s - staggered swaps based on completion
 };
 
 function switchCarousel(carouselName, imageIndex) {
@@ -304,7 +303,69 @@ function initializeCarousels() {
 // Start carousels when page loads
 document.addEventListener('DOMContentLoaded', initializeCarousels);
 
+// ==================== SCROLLABLE CERTIFICATIONS CAROUSEL ====================
+document.addEventListener('DOMContentLoaded', function() {
+  const certWrapper = document.querySelector('.cert-carousel-wrapper');
+  const certCarousel = document.querySelector('.cert-carousel');
+  
+  if (!certWrapper || !certCarousel) return;
+  
+  let scrollPosition = 0;
+  let isScrolling = false;
+  let scrollTimeout;
+  
+  // Handle mouse wheel scroll
+  certWrapper.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    
+    // Mark as scrolling
+    isScrolling = true;
+    certCarousel.classList.add('scrolling');
+    
+    // Scroll horizontally
+    const scrollSpeed = 2;
+    scrollPosition -= e.deltaY * scrollSpeed;
+    
+    // Get carousel width and wrapper width
+    const carouselWidth = certCarousel.scrollWidth;
+    const wrapperWidth = certWrapper.offsetWidth;
+    const maxScroll = -(carouselWidth - wrapperWidth);
+    
+    // Clamp scroll position
+    scrollPosition = Math.max(maxScroll, Math.min(0, scrollPosition));
+    
+    // Apply transform
+    certCarousel.style.transform = `translateX(${scrollPosition}px)`;
+    
+    // Clear previous timeout
+    clearTimeout(scrollTimeout);
+    
+    // Resume auto-scroll after 2 seconds of no scrolling
+    scrollTimeout = setTimeout(() => {
+      isScrolling = false;
+      certCarousel.classList.remove('scrolling');
+      certCarousel.style.transform = '';
+      scrollPosition = 0;
+    }, 2000);
+  });
+  
+  // Pause animation on hover
+  certWrapper.addEventListener('mouseenter', () => {
+    if (!isScrolling) {
+      certCarousel.style.animationPlayState = 'paused';
+    }
+  });
+  
+  // Resume animation on leave (if not scrolling)
+  certWrapper.addEventListener('mouseleave', () => {
+    if (!isScrolling) {
+      certCarousel.style.animationPlayState = 'running';
+      certCarousel.style.transform = '';
+      scrollPosition = 0;
+    }
+  });
+});
 
 console.log('🚀 Portfolio fully loaded!');
-console.log('✨ Features: 3D Globe, CGPA Animation, Accordion Timeline');
+console.log('✨ Features: 3D Globe, CGPA Animation, Accordion Timeline, Scrollable Certifications');
 console.log('📧 Contact form emails sent to: saigowtham712@gmail.com via FormSubmit');

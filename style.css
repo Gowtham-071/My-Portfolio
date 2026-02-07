@@ -459,6 +459,16 @@ body {
   font-weight: 700;
 }
 
+.part-time-badge {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid #a78bfa;
+}
+
 .chevron {
   color: var(--text-gray);
   transition: transform 0.3s;
@@ -1168,6 +1178,11 @@ body {
   overflow: hidden;
   position: relative;
   margin-top: 2rem;
+  cursor: grab;
+}
+
+.cert-carousel-wrapper:active {
+  cursor: grabbing;
 }
 
 .cert-carousel {
@@ -1175,6 +1190,7 @@ body {
   gap: 2rem;
   animation: scroll 35s linear infinite;
   width: max-content;
+  transition: transform 0.3s ease;
 }
 
 @keyframes scroll {
@@ -1187,6 +1203,10 @@ body {
 }
 
 .cert-carousel:hover {
+  animation-play-state: paused;
+}
+
+.cert-carousel.scrolling {
   animation-play-state: paused;
 }
 
