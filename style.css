@@ -692,7 +692,8 @@ body {
 .badge-featured,
 .badge-ongoing,
 .badge-award,
-.badge-cause {
+.badge-cause,
+.badge-ieee {
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -719,6 +720,12 @@ body {
   background: rgba(139, 92, 246, 0.2);
   color: #a78bfa;
   border: 1px solid #a78bfa;
+}
+
+.badge-ieee {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid #34d399;
 }
 
 .project-card h3 {
